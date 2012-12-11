@@ -31,6 +31,12 @@
 
 ;;; Code:
 
+(unless (locate-library "package")
+  (add-to-list 'load-path (expand-file-name
+                           "lib"
+                           (file-name-directory
+                            (or load-file-name buffer-file-name)))))
+
 (require 'package)
 (eval-when-compile
   (require 'cl))
